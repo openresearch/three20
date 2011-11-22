@@ -106,16 +106,16 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)showCaption:(NSString*)caption {
   if (caption) {
-    if (!_captionLabel) {
+      if (!_captionLabel) {
       _captionLabel = [[TTLabel alloc] init];
       _captionLabel.opaque = NO;
       _captionLabel.style = _captionStyle ? _captionStyle : TTSTYLE(photoCaption);
       _captionLabel.alpha = _hidesCaption ? 0 : 1;
-      [self addSubview:_captionLabel];
+      //[self addSubview:_captionLabel];
     }
   }
 
-  _captionLabel.text = caption;
+  //_captionLabel.text = caption;
   [self setNeedsLayout];
 }
 
@@ -223,8 +223,8 @@
 
   _statusSpinner.frame =
     CGRectMake(self.bounds.origin.x + floor(self.bounds.size.width/2 - _statusSpinner.width/2),
-               spinnerTop, _statusSpinner.width, _statusSpinner.height);
-
+               self.bounds.origin.y + floor(self.bounds.size.height/2 - _statusSpinner.height/2),
+               _statusSpinner.width, _statusSpinner.height);
 }
 
 
