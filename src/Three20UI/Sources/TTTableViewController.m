@@ -458,6 +458,8 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)showLoading:(BOOL)show {
+	show = NO;
+	
   if (show) {
     if (!self.model.isLoaded || ![self canShowModel]) {
       NSString* title = _dataSource
